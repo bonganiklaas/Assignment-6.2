@@ -24,4 +24,4 @@ By implementing this API, growth and interests can be huge in demand. Figures in
 
 
 #                                  UML - Jewellery-Store-App
-![uml diagram correct](https://cloud.githubusercontent.com/assets/6699174/7442313/bfb55a2e-f10c-11e4-994c-d2966272f029.jpg)
+![uml diagram correct](https://cloud.githubusercontent.com/assets/6699174/7442338/bb7e0e64-f10d-11e4-9499-b1e91595c9ae.jpg)
