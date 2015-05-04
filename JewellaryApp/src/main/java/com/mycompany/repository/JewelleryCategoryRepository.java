@@ -7,6 +7,7 @@ package com.mycompany.repository;
 
 import com.mycompany.domain.JewelleryCategory;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -14,6 +15,6 @@ import org.springframework.stereotype.Repository;
  * @author BONGANI
  */
 @Repository
-public interface JewelleryCategoryRepository extends JpaRepository<JewelleryCategory,Long>{
+public interface JewelleryCategoryRepository extends CrudRepository<JewelleryCategory,Long>{
     
 }

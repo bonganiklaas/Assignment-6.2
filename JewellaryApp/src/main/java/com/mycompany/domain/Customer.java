@@ -27,6 +27,7 @@ public class Customer implements Serializable {
     private Long id;
     private String custId;
     private String customerNumber;
+    private String names;
    
     
     @Embedded
@@ -57,7 +58,8 @@ public class Customer implements Serializable {
         this.customerNumber=builder.customerNumber;
         this.demographic=builder.demographic;
         this.custId=builder.CustId;
-        this.order=builder.Order;       
+        this.order=builder.Order;  
+        this.names=builder.names;
     }
          
     public static class Builder{
@@ -71,6 +73,7 @@ public class Customer implements Serializable {
             private Demography demographic;
             private String customerNumber;
             private String CustId; 
+            private String names;
          
            public Builder(String customerNumber)
            {
@@ -115,6 +118,11 @@ public class Customer implements Serializable {
             this.CustId =  value;
             return this;
         }
+        public Builder names (String value)
+        {
+            this.names = value;
+           return this;
+        }
         
     
     public Builder copy (Customer value)
@@ -127,6 +135,7 @@ public class Customer implements Serializable {
        this.id=value.getId();
        this.Order=value.getOrder();
        this.demographic=value.getDemographic();
+       this.names=value.getNames();
    
        return this;
     }
@@ -138,6 +147,16 @@ public class Customer implements Serializable {
    
   }
     //starts
+
+    public void setNames(String names) {
+        this.names = names;
+    }
+
+    public String getNames() {
+        return names;
+    }
+    
+    
     public String getCustId() {
         return custId;
     }

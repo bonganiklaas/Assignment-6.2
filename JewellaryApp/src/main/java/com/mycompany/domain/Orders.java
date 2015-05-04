@@ -29,8 +29,6 @@ public class Orders implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String invNumber;
-
-   
     private int orderNumber;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date orderDate;

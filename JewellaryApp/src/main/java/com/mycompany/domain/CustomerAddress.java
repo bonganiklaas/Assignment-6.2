@@ -28,6 +28,11 @@ public class CustomerAddress implements Serializable{
     private Long id;   
   
     
+    
+      public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+      
      private CustomerAddress(Builder builder){
            id=builder.id;
            streetAddress=builder.streetAddress;
@@ -68,10 +73,6 @@ public class CustomerAddress implements Serializable{
             return new CustomerAddress(this);
         }
         
-    }
-
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
     }
 
     public void setId(Long id) {

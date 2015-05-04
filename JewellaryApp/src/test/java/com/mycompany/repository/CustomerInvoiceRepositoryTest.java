@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 
-package repository;
+package com.mycompany.repository;
 
-import com.mycompany.conf.ConnectionConfig;
+
 import com.mycompany.domain.CustomerInvoice;
 import com.mycompany.repository.CustomerInvoiceRepository;
 import java.math.BigDecimal;
@@ -86,7 +86,7 @@ public class CustomerInvoiceRepositoryTest {
 
     @BeforeClass
     public static void setUpClass() throws Exception {
-        ctx = new AnnotationConfigApplicationContext(ConnectionConfig.class);
+        
     }
 
     @AfterClass

@@ -4,10 +4,8 @@
  * and open the template in the editor.
  */
 package com.mycompany.api;
-
-import com.mycompany.domain.CreditCard;
-import com.mycompany.services.CreditCardService;
-import java.math.BigDecimal;
+import com.mycompany.domain.Customer;
+import com.mycompany.services.CustomerService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,21 +20,25 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/**")
 public class HomePage {
     @Autowired
-    private CreditCardService service;
+    private CustomerService service;
     @RequestMapping(value = "home",method = RequestMethod.GET)
     public String Index(){
         return "This is a Home Page";
     }
 
-    @RequestMapping(value = "/CreditCard",method = RequestMethod.GET)
-    public CreditCard getCreditNumber(){
-        CreditCard creditcard = new CreditCard.Builder(12345)
-                .balance(BigDecimal.ZERO)
+    @RequestMapping(value = "/Customer",method = RequestMethod.GET)
+    public Customer getCustomers(){
+        Customer customer = new Customer.Builder("12345")
+                .names("Bongani")
                 .build();
 
-        return creditcard;
+        return customer;
     }
 
-    //@RequestMapping(value = "/Credit", method = RequestMethod.GET)
+    @RequestMapping(value = "/Customer", method = RequestMethod.GET)
+    public List <Customer> getCustomer()
+    {
+         return service.getCustomers();
+    }
     
 }

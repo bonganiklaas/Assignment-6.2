@@ -1,4 +1,4 @@
-package repository;
+package com.mycompany.repository;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -6,7 +6,6 @@ package repository;
  * and open the template in the editor.
  */
 
-import com.mycompany.conf.ConnectionConfig;
 import com.mycompany.domain.CreditCard;
 import com.mycompany.repository.CreditCardRepository;
 import java.math.BigDecimal;
@@ -89,7 +88,7 @@ public class TestCreditCard{
     
      @BeforeClass
     public static void setUpClass() {
-      ctx = new AnnotationConfigApplicationContext(ConnectionConfig.class);        
+          
     }
     
      @AfterClass

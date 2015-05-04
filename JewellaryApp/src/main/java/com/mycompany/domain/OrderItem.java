@@ -49,7 +49,7 @@ public class OrderItem implements Serializable {
           return this;
       }
      
-      public Builder mobilphone(Jewellery value)
+      public Builder Jewellery(Jewellery value)
       {              
          jewellery = value;
          return this;

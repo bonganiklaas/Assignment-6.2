@@ -29,6 +29,54 @@ public class SupplierAddress implements Serializable{
     public Object getSupplierName;
 
       
+     
+    // empty Contructor
+    private SupplierAddress()
+    {
+      
+    }
+    
+    public SupplierAddress(Builder builder)
+    {
+       streetAddress=builder.streetAddress;
+       postalAddress=builder.postalAddress;
+    
+    }
+    
+    public static class Builder{
+    
+      private String streetAddress;
+      private String postalAddress;
+      public Object getSupplierName;
+    
+    
+    public Builder streetAddress (String streetAddress)
+    {
+       this.streetAddress = streetAddress;
+       return this;
+     }
+    
+    public Builder postalAddress (String postalAddress)
+    {
+        
+        this.postalAddress=postalAddress;
+        return this;
+        
+    }
+    
+    public Builder copy( SupplierAddress value)
+    {
+       this.postalAddress=value.postalAddress;
+       this.streetAddress=value.streetAddress;
+       return this;
+    }
+    public SupplierAddress build()
+    {
+         return new SupplierAddress(this);
+    }
+ 
+  }
+        
      public String getPhysicalAddress() {
         return physicalAddress;
     }

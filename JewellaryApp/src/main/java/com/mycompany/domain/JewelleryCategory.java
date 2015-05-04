@@ -21,7 +21,59 @@ public class JewelleryCategory implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private String category;
 
+    private JewelleryCategory()
+    {
+      
+    }
+    
+    public JewelleryCategory(Builder builder)
+    {
+       category=builder.category;
+    }
+    
+    public static class Builder{
+    
+    private String category;
+     
+    public Builder (String  category)
+    {
+       this.category = category;
+     }
+    
+    public Builder category(String category)
+    {
+        
+        this.category=category;
+        return this;
+        
+    }
+    
+    public Builder copy( JewelleryCategory value)
+    {
+       this.category=value.category;
+       return this;
+    }
+    public JewelleryCategory build()
+    {
+         return new JewelleryCategory(this);
+    }
+    
+  }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+    
     public Long getId() {
         return id;
     }

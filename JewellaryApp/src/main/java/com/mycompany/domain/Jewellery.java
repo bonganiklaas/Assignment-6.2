@@ -21,7 +21,128 @@ public class Jewellery implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private String make;
+    private double unitPrice;
+    private String model;
+    private int qty;
+    private String weight;
+    
+    // empty constructor
+    private Jewellery()
+    {
+      
+    }
+    
+    public Jewellery(Builder builder)
+    {
+       make=builder.make;
+       unitPrice=builder.unitPrice;
+       model=builder.model;
+       qty=builder.qty;
+       weight=builder.weight;
+    
+    }
+    
+    public static class Builder{
+    
+     private String make;
+     private double unitPrice;
+     private String model;
+     private int qty;
+     private String weight;;
+    
+    
+    public Builder make (String make)
+    {
+       this.make = make;
+       return this;
+     }
+    
+     public Builder model(String model)
+    {
+       this.model = model;
+         return this;
+     }
+     
+      public Builder qty (int qty )
+    {
+       this.qty = qty;
+         return this;
+     }
+     
+    public Builder unitPrice(double unitPrice)
+    {
+        this.unitPrice=unitPrice;
+        return this;
+    }
+    
+      public Builder weight(String weight)
+    {
+        this.make=weight;
+        return this;
+    }
+    
+    public Builder copy( Jewellery value)
+    {
+       this.make=value.make;
+       this.make=value.make;
+        this.unitPrice=value.unitPrice;
+       this.qty=value.qty;
+       this.model=value.model;
+       return this;
+    }
+    public Jewellery build()
+    {
+         return new Jewellery(this);
+    }
+    
+  }
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public String getMake() {
+        return make;
+    }
+
+    public double getUnitPrice() {
+        return unitPrice;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public int getQty() {
+        return qty;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setMake(String make) {
+        this.make = make;
+    }
+
+    public void setUnitPrice(double unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setQty(int qty) {
+        this.qty = qty;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+    
+     
     public Long getId() {
         return id;
     }

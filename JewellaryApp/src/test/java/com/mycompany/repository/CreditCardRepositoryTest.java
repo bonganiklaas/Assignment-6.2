@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 
-package repository;
+package com.mycompany.repository;
 
-import com.mycompany.conf.ConnectionConfig;
+//import com.mycompany.conf.ConnectionConfig;
 import com.mycompany.domain.CreditCard;
 import com.mycompany.repository.CreditCardRepository;
 import java.math.BigDecimal;
@@ -85,7 +85,7 @@ public class CreditCardRepositoryTest {
 
     @BeforeClass
     public static void setUpClass() throws Exception {
-        ctx = new AnnotationConfigApplicationContext(ConnectionConfig.class);
+      //  ctx = new AnnotationConfigApplicationContext(ConnectionConfig.class);
     }
 
     @AfterClass

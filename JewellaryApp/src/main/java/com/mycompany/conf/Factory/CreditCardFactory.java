@@ -3,11 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.conf.conf.Factory;
+package com.mycompany.conf.Factory;
 
 import com.mycompany.domain.CreditCard;
+import com.mycompany.domain.Orders;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -17,14 +19,15 @@ import java.util.Map;
 public class CreditCardFactory {
     
     //Create a Credit card with Name, balance, expiry date and credit Number 
-     public static CreditCard getCreditCard(Map<String, String> details, BigDecimal balance, Date expiryDate) 
+     public static CreditCard createCreditCard(Map<String, String> values, int creditNumber, BigDecimal balance, Date expiryDate, List<Orders> order, List <CreditCard> creditCard) 
      {
-         CreditCard creditCard = new CreditCard();
-        // creditCard.setCreditNumber(details.get("number"));
-         creditCard.setNameOnCreditCard(details.get("name"));
-         creditCard.setBalance(balance);
-         creditCard.setExpiryDate(expiryDate);
-        return creditCard;
-    
+         CreditCard creditcard = new CreditCard
+                 .Builder(creditNumber)
+                 .balance(balance)
+                 .copy(null)
+                 .build();                 
+         
+         return creditcard;
+     
       }
 }

@@ -4,9 +4,8 @@
  * and open the template in the editor.
  */
 
-package repository;
+package com.mycompany.repository;
 
-import com.mycompany.conf.ConnectionConfig;
 import com.mycompany.domain.OrderItem;
 import com.mycompany.domain.Orders;
 import com.mycompany.repository.OrderRepository;
@@ -86,8 +85,7 @@ public class OrderRepositoryTest {
             
     @BeforeClass
     public static void setUpClass() throws Exception {
-        ctx = new AnnotationConfigApplicationContext(ConnectionConfig.class);
-    }
+      }
 
     @AfterClass
     public static void tearDownClass() throws Exception {

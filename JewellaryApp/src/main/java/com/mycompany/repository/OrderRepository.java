@@ -7,11 +7,12 @@ package com.mycompany.repository;
 
 import com.mycompany.domain.Orders;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author BONGANI
  */
-public interface OrderRepository extends JpaRepository <Orders,Long> {
+public interface OrderRepository extends CrudRepository <Orders,Long> {
     
 }

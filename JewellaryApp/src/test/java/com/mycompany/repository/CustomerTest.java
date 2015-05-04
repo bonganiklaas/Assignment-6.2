@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package repository;
+package com.mycompany.repository;
 
-import com.mycompany.conf.ConnectionConfig;
+
 import com.mycompany.domain.Customer;
 import com.mycompany.repository.CustomerRepository;
 import org.junit.Test;
@@ -26,11 +26,8 @@ public class CustomerTest {
     private Long id;
      private CustomerRepository repo;
       
-     // TODO add test methods here.
+    // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
 
     @Test
      public void hello() {
@@ -42,7 +39,7 @@ public class CustomerTest {
      
     @BeforeClass
     public static void setUpClass() throws Exception {
-         ctx = new AnnotationConfigApplicationContext(ConnectionConfig.class);
+         
     }
 
     @AfterClass

@@ -7,11 +7,12 @@ package com.mycompany.repository;
 
 import com.mycompany.domain.CustomerInvoice;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author BONGANI
  */
-public interface CustomerInvoiceRepository extends JpaRepository <CustomerInvoice,Long> {
+public interface CustomerInvoiceRepository extends CrudRepository <CustomerInvoice,Long> {
     
 }

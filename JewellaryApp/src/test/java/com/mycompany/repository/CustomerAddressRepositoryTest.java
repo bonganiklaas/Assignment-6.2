@@ -4,9 +4,8 @@
  * and open the template in the editor.
  */
 
-package repository;
+package com.mycompany.repository;
 
-import com.mycompany.conf.ConnectionConfig;
 import com.mycompany.domain.Customer;
 import com.mycompany.domain.CustomerAddress;
 import com.mycompany.repository.CustomerAddressRepository;
@@ -82,7 +81,7 @@ public class CustomerAddressRepositoryTest {
 
     @BeforeClass
     public static void setUpClass() throws Exception {
-        ctx = new AnnotationConfigApplicationContext(ConnectionConfig.class);
+        
     }
 
     @AfterClass

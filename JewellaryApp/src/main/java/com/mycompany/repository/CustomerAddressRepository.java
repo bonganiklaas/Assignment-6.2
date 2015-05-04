@@ -7,11 +7,12 @@ package com.mycompany.repository;
 
 import com.mycompany.domain.CustomerAddress;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author BONGANI
  */
-public interface CustomerAddressRepository extends JpaRepository <CustomerAddress,Long> {
+public interface CustomerAddressRepository extends CrudRepository <CustomerAddress,Long> {
     
 }

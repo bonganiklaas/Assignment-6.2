@@ -16,11 +16,77 @@ import javax.persistence.Embeddable;
 public class SupplierContact implements Serializable{
     
     private String phone;
-    private String cell;
+    private int cell;
     private String supplierName;
     private String representative;
    
-
+    // empty Contructor
+    private SupplierContact()
+    {
+      
+    }
+    
+    public SupplierContact(Builder builder)
+    {
+       phone=builder.phone;
+       cell=builder.cell;
+       supplierName=builder.supplierName;
+       representative=builder.representative;
+    
+    }
+    
+    public static class Builder{
+    
+    private String phone;
+    private int cell;
+    private String supplierName;
+    private String representative;
+    
+    
+    public Builder cell(int cell)
+    {
+       this.cell = cell;
+       return this;
+     }
+    
+     public Builder supplierName(String supplierName)
+    {
+       this.supplierName = supplierName;
+       return this;
+     }
+     
+      public Builder representative(String representative)
+    {
+       this.representative = representative;
+       return this;
+     }
+      
+      
+    public Builder phone(String phone)
+    {
+        
+        this.phone=phone;
+        return this;
+        
+    }
+    
+    public Builder copy( SupplierContact value)
+    {
+       this.supplierName=value.supplierName;
+       this.representative=value.representative;
+       this.phone=value.phone;
+       this.cell=value.cell;
+       return this;
+    }
+    public SupplierContact build()
+    {
+         return new SupplierContact(this);
+    }
+    
+ 
+  }
+    
+    
     public void setSupplierName(String supplierName) {
         this.supplierName = supplierName;
     }
@@ -42,7 +108,7 @@ public class SupplierContact implements Serializable{
         return phone;
     }
 
-    public String getCell() {
+    public int getCell() {
         return cell;
     }
 
@@ -50,7 +116,7 @@ public class SupplierContact implements Serializable{
         this.phone = phone;
     }
 
-    public void setCell(String cell) {
+    public void setCell(int cell) {
         this.cell = cell;
     }
     

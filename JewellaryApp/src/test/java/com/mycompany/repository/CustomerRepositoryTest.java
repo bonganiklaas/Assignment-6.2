@@ -4,9 +4,8 @@
  * and open the template in the editor.
  */
 
-package repository;
+package com.mycompany.repository;
 
-import com.mycompany.conf.ConnectionConfig;
 import com.mycompany.domain.Customer;
 import com.mycompany.domain.CustomerName;
 import com.mycompany.repository.CustomerRepository;
@@ -41,9 +40,9 @@ public class CustomerRepositoryTest {
          Customer c = new Customer.Builder("klaasbongani22@gmail.com")
                      .name(name)
                      .build();
-         repo.save(c);
-         id = c.getId();
-         Assert.assertNotNull(c);
+                     repo.save(c);
+                     id = c.getId();
+                     Assert.assertNotNull(c);
    
      }
 
@@ -86,7 +85,7 @@ public class CustomerRepositoryTest {
      
     @BeforeClass
     public static void setUpClass() throws Exception {
-        ctx = new AnnotationConfigApplicationContext(ConnectionConfig.class);
+        
     }
 
     @AfterClass

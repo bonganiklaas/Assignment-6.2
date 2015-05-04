@@ -7,11 +7,12 @@ package com.mycompany.repository;
 
 import com.mycompany.domain.CreditCard;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author BONGANI
  */
-public interface CreditCardRepository  extends JpaRepository< CreditCard,Long>{
+public interface CreditCardRepository  extends CrudRepository< CreditCard,Long>{
     
 }

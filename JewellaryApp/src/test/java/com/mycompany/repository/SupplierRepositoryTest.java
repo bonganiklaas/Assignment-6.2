@@ -4,9 +4,8 @@
  * and open the template in the editor.
  */
 
-package repository;
+package com.mycompany.repository;
 
-import com.mycompany.conf.ConnectionConfig;
 import com.mycompany.domain.Supplier;
 import com.mycompany.domain.SupplierContact;
 import com.mycompany.repository.SupplierRepository;
@@ -34,9 +33,9 @@ public class SupplierRepositoryTest {
    
     @Test 
     public void createSupplier(){
-        SupplierContact name = new SupplierContact();
-        name.setSupplierName("Gold");
-        name.setRepresentative("Lucas");
+       // SupplierContact name = new SupplierContact();
+       // name.setSupplierName("Gold");
+       // name.setRepresentative("Lucas");
         
         repo = ctx.getBean(SupplierRepository.class);
         Supplier c = new Supplier.Builder("23423")
@@ -54,8 +53,8 @@ public class SupplierRepositoryTest {
     }
     @Test(dependsOnMethods = "readSupplier")
     public void updateSupplier(){
-        SupplierContact name = new SupplierContact();
-        name.setSupplierName("GoldWatch");
+       // SupplierContact name = new SupplierContact();
+       // name.setSupplierName("GoldWatch");
     
         
         repo = ctx.getBean(SupplierRepository.class);
@@ -78,15 +77,9 @@ public class SupplierRepositoryTest {
         Assert.assertNull(deletedSupplier);
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
-
     @BeforeClass
     public static void setUpClass() throws Exception {
-        ctx = new AnnotationConfigApplicationContext(ConnectionConfig.class);
+       
     }
 
     @AfterClass

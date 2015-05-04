@@ -7,11 +7,12 @@ package com.mycompany.repository;
 
 import com.mycompany.domain.Jewellery;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author BONGANI
  */
-public interface JewelleryRepository extends JpaRepository <Jewellery,Long>{
+public interface JewelleryRepository extends CrudRepository <Jewellery,Long>{
     
 }
