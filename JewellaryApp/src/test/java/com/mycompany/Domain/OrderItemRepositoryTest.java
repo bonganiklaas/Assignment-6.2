@@ -4,9 +4,10 @@
  * and open the template in the editor.
  */
 
-package com.mycompany.repository;
+package com.mycompany.Domain;
 
 import com.mycompany.domain.OrderItem;
+import com.mycompany.repository.OrderItemRepository;
 import com.mycompany.repository.OrderItemRepository;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -25,7 +26,7 @@ import org.testng.annotations.Test;
  */
 public class OrderItemRepositoryTest {
     
-    public static ApplicationContext ctx;
+  
     private Long id;
     private OrderItemRepository repo;
     
@@ -34,7 +35,7 @@ public class OrderItemRepositoryTest {
     
     @Test
     public void createItem(){
-        repo = ctx.getBean(OrderItemRepository.class);
+    
        OrderItem item = new OrderItem.Builder(1)
                        .build();
         repo.save(item);
@@ -43,17 +44,15 @@ public class OrderItemRepositoryTest {
        Assert.assertNotNull(i);
      }
     
-    /*
+   
      @Test (dependsOnMethods = "createItem")
      public void readItem(){
-         repo = ctx.getBean(OrderItemRepository.class);
          OrderItem i = repo.findOne(id);
          Assert.assertEquals(i.getQuantity(), 1);
          
      }
      @Test (dependsOnMethods ="readItem")
      public void updateItem(){
-         repo=ctx.getBean(OrderItemRepository.class);
          OrderItem i = repo.findOne(id);
          OrderItem updateitem = new OrderItem.Builder(3)
                                 .id(id)
@@ -66,13 +65,12 @@ public class OrderItemRepositoryTest {
      
      @Test(dependsOnMethods = "updateItem")
      public void deleteItem(){
-         repo = ctx.getBean(OrderItemRepository.class);
          OrderItem i = repo.findOne(id);
          repo.delete(i);
          OrderItem deletedItem = repo.findOne(id);
          Assert.assertNull(deletedItem);
      }
-     */
+     
 
     @BeforeClass
     public static void setUpClass() throws Exception {

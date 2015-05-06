@@ -4,10 +4,11 @@
  * and open the template in the editor.
  */
 
-package com.mycompany.repository;
+package com.mycompany.Domain;
 
 import com.mycompany.domain.OrderItem;
 import com.mycompany.domain.Orders;
+import com.mycompany.repository.OrderRepository;
 import com.mycompany.repository.OrderRepository;
 import java.util.Date;
 import java.util.List;
@@ -27,8 +28,7 @@ import org.testng.annotations.Test;
  * @author Bongani
  */
 public class OrderRepositoryTest {
-    
-    public static ApplicationContext ctx;
+  
     private Long id;
     private OrderRepository repo;
     
@@ -42,8 +42,7 @@ public class OrderRepositoryTest {
     @Test
     public void createOrder(){
         Date d = new Date();
-        repo = ctx.getBean(OrderRepository.class);
-        Orders order = new Orders.Builder(12345)
+       Orders order = new Orders.Builder(12345)
                         .invNumber("S002")
                         .build();
         
@@ -55,15 +54,13 @@ public class OrderRepositoryTest {
     }
     @Test(dependsOnMethods = "createOrder")
        public void readOrder(){
-        repo = ctx.getBean(OrderRepository.class);
         Orders order = repo.findOne(id);
         Assert.assertEquals(order.getOrderNumber(),12345);
         
     }
        @Test(dependsOnMethods = "readOrder")
        public void updateOrder(){
-           repo = ctx.getBean(OrderRepository.class);
-           Orders order = repo.findOne(id);
+            Orders order = repo.findOne(id);
            Orders updateOrder = new Orders.Builder(12345)
                              .orders((List<OrderItem>) order)
                              .invNumber("S005")
@@ -75,7 +72,6 @@ public class OrderRepositoryTest {
        
        @Test(dependsOnMethods = "updateOrder")
        public void deleteOrder(){
-            repo = ctx.getBean(OrderRepository.class);
             Orders order = repo.findOne(id);
             repo.delete(order);
             Orders deleteOrder = repo.findOne(id);

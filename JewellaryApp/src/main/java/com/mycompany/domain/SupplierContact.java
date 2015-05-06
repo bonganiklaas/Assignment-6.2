@@ -41,6 +41,10 @@ public class SupplierContact implements Serializable{
     private int cell;
     private String supplierName;
     private String representative;
+
+        public Builder() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
     
     
     public Builder cell(int cell)

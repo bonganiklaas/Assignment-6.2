@@ -4,10 +4,11 @@
  * and open the template in the editor.
  */
 
-package com.mycompany.repository;
+package com.mycompany.Domain;
 
 import com.mycompany.domain.Supplier;
 import com.mycompany.domain.SupplierContact;
+import com.mycompany.repository.SupplierRepository;
 import com.mycompany.repository.SupplierRepository;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -24,30 +25,21 @@ import org.testng.annotations.Test;
  * @author Bongani
  */
 public class SupplierRepositoryTest {
-    
-    public static ApplicationContext ctx;
+
     private Long id;
     public SupplierRepository repo;
-    
-    
-   
+      
     @Test 
     public void createSupplier(){
-       // SupplierContact name = new SupplierContact();
-       // name.setSupplierName("Gold");
-       // name.setRepresentative("Lucas");
-        
-        repo = ctx.getBean(SupplierRepository.class);
-        Supplier c = new Supplier.Builder("23423")
-                            .build();
+   Supplier c = new Supplier.Builder("23423")
+       .build();
         repo.save(c);
         id = c.getId();
         Assert.assertNotNull(c);         
      }
     @Test(dependsOnMethods = "createSupplier")
      public void readSupplier(){
-     repo=ctx.getBean(SupplierRepository.class);
-     Supplier s = repo.findOne(id);
+      Supplier s = repo.findOne(id);
      Assert.assertEquals(s.getSupaddress().getSupplierName,"Neclase");
      
     }
@@ -57,7 +49,7 @@ public class SupplierRepositoryTest {
        // name.setSupplierName("GoldWatch");
     
         
-        repo = ctx.getBean(SupplierRepository.class);
+    
         Supplier c = repo.findOne(id);
         Supplier updateSupplier= new Supplier.Builder("23423")
                                     .supplier(c) 
@@ -69,7 +61,6 @@ public class SupplierRepositoryTest {
     }
     @Test(dependsOnMethods = "updateSupplier")
     public void deleteSupplier(){
-        repo = ctx.getBean(SupplierRepository.class);
         Supplier s = repo.findOne(id);
         repo.delete(s);
         

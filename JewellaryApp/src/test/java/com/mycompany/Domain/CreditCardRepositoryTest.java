@@ -4,10 +4,11 @@
  * and open the template in the editor.
  */
 
-package com.mycompany.repository;
+package com.mycompany.Domain;
 
 //import com.mycompany.conf.ConnectionConfig;
 import com.mycompany.domain.CreditCard;
+import com.mycompany.repository.CreditCardRepository;
 import com.mycompany.repository.CreditCardRepository;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -30,7 +31,6 @@ public class CreditCardRepositoryTest {
     public CreditCardRepositoryTest() {
     }
     
-    public static ApplicationContext ctx;
     private Long id;
     private CreditCardRepository repo;
 
@@ -39,7 +39,7 @@ public class CreditCardRepositoryTest {
     //
    @Test
    public void createCreditCard(){
-       repo = ctx.getBean(CreditCardRepository.class);
+      
         Date Date = null;
        CreditCard c = new CreditCard.Builder(12382)
                           .balance(BigDecimal.ZERO)
@@ -53,13 +53,11 @@ public class CreditCardRepositoryTest {
    
    @Test(dependsOnMethods = "createCreditCard")
    public void readCreditCard(){
-       repo = ctx.getBean(CreditCardRepository.class);
-       CreditCard c = repo.findOne(id);
+         CreditCard c = repo.findOne(id);
        Assert.assertEquals(c.getCreditNumber(),12382);
    }
    @Test(dependsOnMethods = "readCreditCard")
    public void updateCreditCard(){
-       repo = ctx.getBean(CreditCardRepository.class);
        CreditCard c = repo.findOne(id);
        CreditCard updateCreditCard = new CreditCard.Builder(12382)
                                      // .creditCard(c)
@@ -74,7 +72,6 @@ public class CreditCardRepositoryTest {
    
    @Test(dependsOnMethods = "updateCreditCard")
    public void deleteCreditCard(){
-       repo = ctx.getBean(CreditCardRepository.class);
        CreditCard c = repo.findOne(id);
        repo.delete(c);
        CreditCard deleteCreditCard = repo.findOne(id);
@@ -85,7 +82,7 @@ public class CreditCardRepositoryTest {
 
     @BeforeClass
     public static void setUpClass() throws Exception {
-      //  ctx = new AnnotationConfigApplicationContext(ConnectionConfig.class);
+    
     }
 
     @AfterClass

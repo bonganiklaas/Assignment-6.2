@@ -4,10 +4,11 @@
  * and open the template in the editor.
  */
 
-package com.mycompany.repository;
+package com.mycompany.Domain;
 
 import com.mycompany.domain.Customer;
 import com.mycompany.domain.CustomerAddress;
+import com.mycompany.repository.CustomerAddressRepository;
 import com.mycompany.repository.CustomerAddressRepository;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -24,8 +25,7 @@ import org.testng.annotations.Test;
  * @author Bongani
  */
 public class CustomerAddressRepositoryTest {
-    
-    public static ApplicationContext ctx;
+
     private Long id;
     public CustomerAddressRepository repo;
     
@@ -35,7 +35,6 @@ public class CustomerAddressRepositoryTest {
     
     @Test 
     public void createCustAddress(){
-        repo = ctx.getBean(CustomerAddressRepository.class);
         CustomerAddress c = new CustomerAddress.Builder("7 woodburry close")
                              .postalAddress(7515)
                              .build();
@@ -45,14 +44,12 @@ public class CustomerAddressRepositoryTest {
      }
     @Test(dependsOnMethods = "createCustAddress")
      public void readCustAddress(){
-     repo=ctx.getBean(CustomerAddressRepository.class);
      CustomerAddress c = repo.findOne(id);
      Assert.assertEquals(c.getPostalAddress(),"7 woodburry close");
      
     }
     @Test(dependsOnMethods = "readCustAddress")
     public void updateCustAddress(){
-        repo = ctx.getBean(CustomerAddressRepository.class);
         CustomerAddress c = repo.findOne(id);
         CustomerAddress updateCustAddress = new CustomerAddress.Builder("7 woodburry close") 
                                             .customerAddress(c)
@@ -65,19 +62,12 @@ public class CustomerAddressRepositoryTest {
     }
     @Test(dependsOnMethods = "updateCustAddress")
     public void deleteCustAddress(){
-        repo = ctx.getBean(CustomerAddressRepository.class);
         CustomerAddress cust = repo.findOne(id);
         repo.delete(cust);
         
         CustomerAddress deletedCusAddress = repo.findOne(id);
         Assert.assertNull(deletedCusAddress);
     }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
 
     @BeforeClass
     public static void setUpClass() throws Exception {
