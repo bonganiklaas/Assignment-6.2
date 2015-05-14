@@ -4,16 +4,12 @@
  * and open the template in the editor.
  */
 package com.mycompany.service;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  *
  * @author BONGANI
  */
 public class ServiceTests {
-    
-     // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+ 
 }

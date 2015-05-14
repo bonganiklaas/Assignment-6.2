@@ -3,12 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.services.Impl;
+
+package com.mycompany.services;
+
+import com.mycompany.domain.Supplier;
+import java.util.List;
 
 /**
  *
- * @author BONGANI
+ * @author Khulsum
  */
-public class OrderImpl {
+public interface ListSupplierService {
+    
+    public List<Supplier>getAllSuppliers();
     
 }

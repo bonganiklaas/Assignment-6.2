@@ -32,7 +32,7 @@ public class CustomerInvoiceRepositoryTest {
     private Long id;
     public CustomerInvoiceRepository repo;
     
-    
+    /*
    
     @Test 
     public void createCustInvoice(){
@@ -75,6 +75,8 @@ public class CustomerInvoiceRepositoryTest {
         Assert.assertNull(deletedCusAddress);
     }
 
+    */
+    
     @BeforeClass
     public static void setUpClass() throws Exception {
         

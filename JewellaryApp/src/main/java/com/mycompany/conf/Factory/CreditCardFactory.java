@@ -7,7 +7,6 @@ package com.mycompany.conf.Factory;
 
 import com.mycompany.domain.CreditCard;
 import com.mycompany.domain.Orders;
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -19,7 +18,7 @@ import java.util.Map;
 public class CreditCardFactory {
     
     //Create a Credit card with Name, balance, expiry date and credit Number 
-     public static CreditCard createCreditCard(Map<String, String> values, int creditNumber, BigDecimal balance, Date expiryDate, List<Orders> order, List <CreditCard> creditCard) 
+     public static CreditCard createCreditCard(Map<String, String> values, int creditNumber, double balance, Date expiryDate, List<Orders> order, List <CreditCard> creditCard) 
      {
          CreditCard creditcard = new CreditCard
                  .Builder(creditNumber)

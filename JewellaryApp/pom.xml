@@ -64,9 +64,7 @@
 	<artifactId>commons-dbcp</artifactId>
 	<version>1.2.2</version>
 </dependency>
-
-
-  </dependencies>
+</dependencies>
 
      <build>
         <plugins>

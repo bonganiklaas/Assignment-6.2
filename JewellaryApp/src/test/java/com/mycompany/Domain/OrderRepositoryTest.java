@@ -39,6 +39,8 @@ public class OrderRepositoryTest {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
+    
+    /*
     @Test
     public void createOrder(){
         Date d = new Date();
@@ -78,7 +80,8 @@ public class OrderRepositoryTest {
             Assert.assertNull(deleteOrder);
        }
             
-            
+          */
+    
     @BeforeClass
     public static void setUpClass() throws Exception {
       }

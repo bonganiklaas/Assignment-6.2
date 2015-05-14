@@ -5,7 +5,7 @@
  */
 package com.mycompany.api;
 import com.mycompany.domain.Customer;
-import com.mycompany.services.CustomerService;
+import com.mycompany.services.FindCustomerService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/**")
 public class HomePage {
     @Autowired
-    private CustomerService service;
+    private FindCustomerService service;
     @RequestMapping(value = "home",method = RequestMethod.GET)
     public String Index(){
         return "This is a Home Page";
@@ -38,7 +38,9 @@ public class HomePage {
     @RequestMapping(value = "/Customer", method = RequestMethod.GET)
     public List <Customer> getCustomer()
     {
-         return service.getCustomers();
+         return (List<Customer>) service.getCustomer("12345");
+               
+                
     }
     
 }

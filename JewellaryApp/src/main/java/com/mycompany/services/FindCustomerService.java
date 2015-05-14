@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.services.Impl;
 
-/**
- *
- * @author BONGANI
- */
-public class CreditCardImpl {
+package com.mycompany.services;
+
+import com.mycompany.domain.Customer;
+
+public interface FindCustomerService {
+    public Customer getCustomer(String id);
     
 }

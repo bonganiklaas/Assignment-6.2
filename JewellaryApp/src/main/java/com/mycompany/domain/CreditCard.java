@@ -7,7 +7,6 @@ package com.mycompany.domain;
 
 import com.mycompany.domain.Customer.Builder;
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,7 +28,7 @@ public class CreditCard implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date expiryDate;
     private String nameOnCreditCard;
-    private BigDecimal balance;
+    private double balance;
     private String owner;
     
          private CreditCard(Builder builder){
@@ -47,7 +46,7 @@ public class CreditCard implements Serializable {
         private int creditNumber;
         private Date expiryDate;
         private String owner;
-        private BigDecimal balance;
+        private double balance;
         
         public Builder(int creditNumber){
             this.creditNumber = creditNumber;
@@ -67,7 +66,7 @@ public class CreditCard implements Serializable {
             return this;
         }
         
-        public Builder balance(BigDecimal value){
+        public Builder balance(double value){
             balance = value;
             return this;
         }
@@ -102,7 +101,7 @@ public class CreditCard implements Serializable {
         return owner;
     }
 
-    public BigDecimal getBalance() {
+    public double getBalance() {
         return balance;
     }
 
@@ -132,7 +131,7 @@ public class CreditCard implements Serializable {
         this.nameOnCreditCard = nameOnCreditCard;
     }
 
-    public void setBalance(BigDecimal balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 

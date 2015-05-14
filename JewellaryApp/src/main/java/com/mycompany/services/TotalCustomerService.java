@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package com.mycompany.services;
 
-/**
- *
- * @author BONGANI
- */
-public interface JewelleryCategoryService {
+import com.mycompany.domain.Customer;
+import java.util.List;
+
+public interface TotalCustomerService {
+    public List<Customer> getTotalCustomer();
     
 }

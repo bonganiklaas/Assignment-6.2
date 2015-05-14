@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.services.Impl;
+package com.mycompany.model;
+
+import org.springframework.hateoas.ResourceSupport;
 
 /**
  *
  * @author BONGANI
  */
-public class JewelleryCategoryImpl {
+public class CustomerResource extends ResourceSupport{
     
 }

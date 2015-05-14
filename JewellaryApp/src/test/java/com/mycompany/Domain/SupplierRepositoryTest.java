@@ -29,6 +29,9 @@ public class SupplierRepositoryTest {
     private Long id;
     public SupplierRepository repo;
       
+    
+    /*
+    
     @Test 
     public void createSupplier(){
    Supplier c = new Supplier.Builder("23423")
@@ -68,6 +71,8 @@ public class SupplierRepositoryTest {
         Assert.assertNull(deletedSupplier);
     }
 
+    */
+    
     @BeforeClass
     public static void setUpClass() throws Exception {
        
