@@ -20,6 +20,10 @@ import javax.persistence.OneToOne;
 @Entity
 public class OrderItem implements Serializable {
     private static final long serialVersionUID = 1L;
+
+    public static void add(OrderItem value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
      private Long id;
@@ -27,8 +31,7 @@ public class OrderItem implements Serializable {
      private int quantity;
      @OneToOne
      private Jewellery jewellery;
-
-       
+     
      public OrderItem(){
      }
      

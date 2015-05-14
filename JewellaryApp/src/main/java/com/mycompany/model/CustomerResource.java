@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.service;
-import org.springframework.beans.factory.annotation.Autowired;
+package com.mycompany.model;
+
+import org.springframework.hateoas.ResourceSupport;
 
 /**
  *
  * @author BONGANI
  */
-public class ServiceTests {
-    // @Test
-    // public void hello() {}
+public class CustomerResource extends ResourceSupport{
+    
 }

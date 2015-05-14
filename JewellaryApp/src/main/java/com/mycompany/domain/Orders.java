@@ -25,6 +25,10 @@ import javax.persistence.Temporal;
 @Entity
 public class Orders implements Serializable {
     private static final long serialVersionUID = 1L;
+
+    public static void add(Orders value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -32,9 +36,6 @@ public class Orders implements Serializable {
     private int orderNumber;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date orderDate;
-//    @OneToOne
-//    private CustomerInvoice customerInvoice;
- 
     @OneToOne
     private Customer customer;
     

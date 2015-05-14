@@ -30,7 +30,7 @@ public class CustomerServiceImpl implements CustomerService{
     public List<Customer> getCustomers() {
     
        Customer customer = new Customer();
-        List<Customer> allcustomer = customerRepo.findAll();
+        Iterable<Customer> allcustomer = customerRepo.findAll();
                         
         for (Customer customers: allcustomer)
         {

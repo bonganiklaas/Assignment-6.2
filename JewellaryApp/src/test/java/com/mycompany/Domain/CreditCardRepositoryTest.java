@@ -77,10 +77,7 @@ public class CreditCardRepositoryTest {
        CreditCard deleteCreditCard = repo.findOne(id);
        Assert.assertNull(deleteCreditCard);
    }
-       
-   
-
-    @BeforeClass
+     @BeforeClass
     public static void setUpClass() throws Exception {
     
     }
