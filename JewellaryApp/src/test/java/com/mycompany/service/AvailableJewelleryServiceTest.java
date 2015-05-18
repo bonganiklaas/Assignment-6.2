@@ -18,7 +18,7 @@ import org.testng.annotations.Test;
  *
  * @author BONGANI
  */
-public class AvailableMobileServiceTest {
+public class AvailableJewelleryServiceTest {
     
    
     public AvailableJewelleryService service;

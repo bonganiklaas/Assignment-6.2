@@ -4,7 +4,7 @@ package com.mycompany.service;
 import com.mycompany.domain.Jewellery;
 import com.mycompany.repository.JewelleryRepository;
 import com.mycompany.services.JewelleryQTYService;
-import org.springframework.context.ApplicationContext;
+;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -16,23 +16,20 @@ import org.testng.annotations.Test;
  *
  * @author BONGANI
  */
-public class MobileQTYServiceTest {
-    
-    public static ApplicationContext ctx; 
+public class JewelleryQTYServiceTest {
+
     public JewelleryQTYService service;
-    private JewelleryRepository mobilerepository;
+    private JewelleryRepository jeweleeryrepository;
     
-    public MobileQTYServiceTest() {
+    public JewelleryQTYServiceTest() {
     }
   
     @Test
         public void getAvailablePhone(){
-        mobilerepository = ctx.getBean(JewelleryRepository.class);
-    
-        
+           
         Jewellery j = new Jewellery.Builder().qty(3).build();
                    
-        mobilerepository.save(j);
+        jeweleeryrepository.save(j);
         
         int qty = service.getAvailableJewellery("9320");
         Assert.assertEquals(qty,3);
