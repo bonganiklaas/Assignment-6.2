@@ -37,13 +37,12 @@ public class CreditCardRepositoryTest {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-    /*
+    
    @Test
    public void createCreditCard(){
       
        Date Date = null;
-       CreditCard c = new CreditCard.Builder(12382)
-                          .balance(BigDecimal.ZERO)
+       CreditCard c = new CreditCard.Builder(12382).balance(20000)
                           .expiryDate(Date)
                           .owner("clifford")
                           .build();
@@ -63,7 +62,7 @@ public class CreditCardRepositoryTest {
        CreditCard updateCreditCard = new CreditCard.Builder(12382)
                                      // .creditCard(c)
                                       .owner("bongani")
-                                      .balance(BigDecimal.ZERO)
+                                      .balance(20000)
                                       .build();
        
        repo.save(updateCreditCard);
@@ -79,7 +78,7 @@ public class CreditCardRepositoryTest {
        Assert.assertNull(deleteCreditCard);
    }
     
-    */
+    
     
      @BeforeClass
     public static void setUpClass() throws Exception {

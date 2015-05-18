@@ -22,7 +22,7 @@ import org.testng.annotations.Test;
 
 /**
  *
- * @author Khulsum
+ * @author Bongani
  */
 public class OrderItemRepositoryTest {
     
@@ -33,7 +33,6 @@ public class OrderItemRepositoryTest {
     public OrderItemRepositoryTest() {
     }
     
-    /*
     @Test
     public void createItem(){
     
@@ -71,8 +70,7 @@ public class OrderItemRepositoryTest {
          OrderItem deletedItem = repo.findOne(id);
          Assert.assertNull(deletedItem);
      }
-     */
-
+   
     @BeforeClass
     public static void setUpClass() throws Exception {
           

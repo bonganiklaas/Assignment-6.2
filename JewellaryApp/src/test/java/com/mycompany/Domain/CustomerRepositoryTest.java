@@ -28,7 +28,7 @@ public class CustomerRepositoryTest {
     @Autowired
     CustomerRepository repository;
    
-    /*
+
     @Test
      public void createCustomer() {
          
@@ -82,8 +82,7 @@ public class CustomerRepositoryTest {
          Assert.assertNull(deletedCustomer);
       }
      
-    */
-    
+   
     @BeforeClass
     public static void setUpClass() throws Exception {
         

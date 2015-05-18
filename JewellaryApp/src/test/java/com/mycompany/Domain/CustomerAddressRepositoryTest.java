@@ -33,7 +33,7 @@ public class CustomerAddressRepositoryTest {
     public CustomerAddressRepositoryTest() {
     }
     
-    /*
+    
     @Test 
     public void createCustAddress(){
         CustomerAddress c = new CustomerAddress.Builder("7 woodburry close")
@@ -70,8 +70,7 @@ public class CustomerAddressRepositoryTest {
         Assert.assertNull(deletedCusAddress);
     }
 
-    */
-    
+     
     @BeforeClass
     public static void setUpClass() throws Exception {
         
