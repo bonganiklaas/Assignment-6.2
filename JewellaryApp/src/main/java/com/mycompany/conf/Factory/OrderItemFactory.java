@@ -7,7 +7,9 @@ package com.mycompany.conf.Factory;
 
 import com.mycompany.domain.Jewellery;
 import com.mycompany.domain.OrderItem;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -15,10 +17,13 @@ import java.util.List;
  */
 public class OrderItemFactory {
     
-     public static OrderItem createOrder (Jewellery jewellery, int quantity)
+     public static OrderItem createOrder (Jewellery jewellery, int value)
     {
          OrderItem orders = new OrderItem
-                 .Builder(quantity).Jewellery(jewellery).OrderItem(null).build();
+                 .Builder(value)
+                 .Jewellery(jewellery)
+                 .build();
+
                  
          return orders;
     }

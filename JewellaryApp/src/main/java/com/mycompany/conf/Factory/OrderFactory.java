@@ -21,8 +21,11 @@ public class OrderFactory {
      public static Orders createOrder (List<OrderItem> orderItems, Customer customer, String invNumber, int orderNumber, Date orderDate)
     {
          Orders order = new Orders
-                 .Builder(orderNumber).invNumber(invNumber).orders(orderItems)
-                 .customer(customer).date(orderDate).orders(orderItems)
+                 .Builder(orderNumber)
+                 .invNumber(invNumber)
+                 .orders(orderItems)
+                 .customer(customer)
+                 .date(orderDate)
                  .build();
          
          return order;

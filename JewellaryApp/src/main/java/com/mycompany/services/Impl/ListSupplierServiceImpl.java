@@ -1,3 +1,4 @@
+
 import com.mycompany.domain.Supplier;
 import com.mycompany.repository.SupplierRepository;
 import com.mycompany.services.ListSupplierService;
@@ -17,7 +18,7 @@ public class ListSupplierServiceImpl implements ListSupplierService{
     SupplierRepository supplierRepo;
     @Override
     public List<Supplier> getAllSuppliers() {
-    return  (List<Supplier>) supplierRepo.findAll();
+    return (List<Supplier>) supplierRepo.findAll();
     }
    
 }

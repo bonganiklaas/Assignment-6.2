@@ -7,8 +7,11 @@
 package com.mycompany.services;
 
 import com.mycompany.domain.Customer;
+import java.util.List;
 
 public interface FindCustomerService {
     public Customer getCustomer(String id);
+
+   public List<Customer> getAllCustomers();
     
 }

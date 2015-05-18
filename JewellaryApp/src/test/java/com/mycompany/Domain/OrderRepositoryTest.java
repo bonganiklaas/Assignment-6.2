@@ -6,21 +6,17 @@
 
 package com.mycompany.Domain;
 
+import com.mycompany.conf.Factory.OrderFactory;
+import com.mycompany.conf.Factory.OrderItemFactory;
 import com.mycompany.domain.OrderItem;
 import com.mycompany.domain.Orders;
+import com.mycompany.domain.Customer;
 import com.mycompany.repository.OrderRepository;
-import com.mycompany.repository.OrderRepository;
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import javax.persistence.criteria.Order;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.testng.Assert;
-import static org.testng.Assert.*;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 /**
@@ -29,70 +25,53 @@ import org.testng.annotations.Test;
  */
 public class OrderRepositoryTest {
   
+    private  Orders o1;
+    public OrderRepository repo;
     private Long id;
-    private OrderRepository repo;
-    
     
     public OrderRepositoryTest() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    
     @Test
     public void createOrder(){
         Date d = new Date();
+       //bypass thefactory 
+       Customer customer = new Customer.Builder("C2002").build();
+       
        Orders order = new Orders.Builder(12345)
                         .invNumber("S002")
                         .build();
-        
-        repo.save(order);
-        id = order.getId();
-        Orders orders = repo.findOne(id);
-        Assert.assertNotNull(orders);
+       //bypass thefactory 
+    
+       
+       OrderItem orderItem1 = OrderItemFactory.createOrder(null, 4);
+       OrderItem orderItem2 = OrderItemFactory.createOrder(null, 8);
+       
+       List<OrderItem> orderItems = new ArrayList<>();
+       orderItems.add(0,orderItem1);
+       orderItems.add(1,orderItem2);
+       
+       String invNumber = "S001";
+       int orderNumber = 1001;
+
+        o1 = OrderFactory.createOrder(orderItems, customer, invNumber, orderNumber, d);
+        Assert.assertNotNull(order);
+        Assert.assertTrue(o1.getOrderItems().size() == 2);
                                             
     }
-    @Test(dependsOnMethods = "createOrder")
+
        public void readOrder(){
         Orders order = repo.findOne(id);
         Assert.assertEquals(order.getOrderNumber(),12345);
         
     }
-       @Test(dependsOnMethods = "readOrder")
+       @Test(dependsOnMethods = "createOrder")
        public void updateOrder(){
-            Orders order = repo.findOne(id);
-           Orders updateOrder = new Orders.Builder(12345)
-                             .orders((List<OrderItem>) order)
+         Orders updateOrder = new Orders.Builder(12345)
+                             .copy(o1)
                              .invNumber("S005")
                              .build();
-          repo.save(updateOrder);
-          Orders newOrder = repo.findOne(id);
-          Assert.assertEquals(newOrder.getInvNumber(), "S005");
+          Assert.assertEquals(o1.getInvNumber(), "S001");
+          Assert.assertEquals(updateOrder.getInvNumber(),"S005");
        }
-       
-       @Test(dependsOnMethods = "updateOrder")
-       public void deleteOrder(){
-            Orders order = repo.findOne(id);
-            repo.delete(order);
-            Orders deleteOrder = repo.findOne(id);
-            Assert.assertNull(deleteOrder);
-       }
-            
-    
-    @BeforeClass
-    public static void setUpClass() throws Exception {
-      }
-
-    @AfterClass
-    public static void tearDownClass() throws Exception {
-    }
-
-    @BeforeMethod
-    public void setUpMethod() throws Exception {
-    }
-
-    @AfterMethod
-    public void tearDownMethod() throws Exception {
-    }
 }

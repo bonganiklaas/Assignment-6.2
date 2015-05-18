@@ -123,8 +123,7 @@ public class Customer implements Serializable {
             this.names = value;
            return this;
         }
-        
-    
+            
     public Builder copy (Customer value)
     {
        this.address=value.getAddress();

@@ -28,8 +28,7 @@ public class OrderItemRepositoryTest {
     
   
     private Long id;
-    private OrderItemRepository repo;
-    
+   
     public OrderItemRepositoryTest() {
     }
     
@@ -38,53 +37,16 @@ public class OrderItemRepositoryTest {
     
        OrderItem item = new OrderItem.Builder(1)
                        .build();
-        repo.save(item);
-        id  = item.getId();
-        OrderItem i = repo.findOne(id);
-       Assert.assertNotNull(i);
+           Assert.assertNotNull(item);
      }
-    
-   
-     @Test (dependsOnMethods = "createItem")
-     public void readItem(){
-         OrderItem i = repo.findOne(id);
-         Assert.assertEquals(i.getQuantity(), 1);
-         
-     }
-     @Test (dependsOnMethods ="readItem")
+
+     @Test (dependsOnMethods ="createItem")
      public void updateItem(){
-         OrderItem i = repo.findOne(id);
-         OrderItem updateitem = new OrderItem.Builder(3)
+        OrderItem updateitem = new OrderItem.Builder(3)
                                 .id(id)
                                 .build();
-         repo.save(updateitem);
-         OrderItem newItem = repo.findOne(id);
-         Assert.assertEquals(newItem.getQuantity(), 3);
+         Assert.assertEquals(updateitem.getQuantity(), 3);
                  
      }
      
-     @Test(dependsOnMethods = "updateItem")
-     public void deleteItem(){
-         OrderItem i = repo.findOne(id);
-         repo.delete(i);
-         OrderItem deletedItem = repo.findOne(id);
-         Assert.assertNull(deletedItem);
-     }
-   
-    @BeforeClass
-    public static void setUpClass() throws Exception {
-          
-    }
-
-    @AfterClass
-    public static void tearDownClass() throws Exception {
-    }
-
-    @BeforeMethod
-    public void setUpMethod() throws Exception {
-    }
-
-    @AfterMethod
-    public void tearDownMethod() throws Exception {
-    }
 }

@@ -21,10 +21,7 @@ import javax.persistence.OneToOne;
 public class OrderItem implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    public static void add(OrderItem value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    @Id
+        @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
      private Long id;
      @Column(name = "quantity")
@@ -32,8 +29,7 @@ public class OrderItem implements Serializable {
      @OneToOne
      private Jewellery jewellery;
      
-     public OrderItem(){
-     }
+     
      
     public static class Builder{
      
@@ -41,7 +37,9 @@ public class OrderItem implements Serializable {
      private int quantity;
       private Jewellery jewellery;
       
-      
+      public OrderItem build(){
+            return new OrderItem(this);
+        }
        public Builder(int quantity){
             this.quantity = quantity;
         }
@@ -64,16 +62,16 @@ public class OrderItem implements Serializable {
           jewellery = orderitem.getJewellery();
           return this;
       }
+
+   
       
-      public OrderItem build(){
-          return new OrderItem(this);
-      }
     
     }
     private OrderItem(Builder builder){
         id = builder.id;
         quantity = builder.quantity;
         jewellery = builder.jewellery;
+        
         
     }
 

@@ -39,7 +39,7 @@ public class Orders implements Serializable {
     @OneToOne
     private Customer customer;
     
-    @OneToMany(orphanRemoval=true, cascade= CascadeType.ALL)
+    @OneToMany( cascade= CascadeType.ALL)
     @JoinColumn(name="order_id")
     private List<OrderItem> orderItems;
 

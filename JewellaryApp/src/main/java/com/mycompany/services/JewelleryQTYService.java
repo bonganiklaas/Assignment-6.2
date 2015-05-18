@@ -7,7 +7,7 @@
 package com.mycompany.services;
 /**
  *
- * @author Khulsum
+ * @author Bongani
  */
 public interface JewelleryQTYService {
     

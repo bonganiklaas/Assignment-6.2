@@ -25,7 +25,7 @@ public class CreditServiceImpl implements CreditService{
         for (CreditCard cards: allcards) {
             if(cards.getCreditNumber()==creditNumber) {
                 
-                balance = cards.getBalance();
+               balance = cards.getBalance();
                                        
            }
         

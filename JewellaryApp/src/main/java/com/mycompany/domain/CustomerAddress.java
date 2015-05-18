@@ -61,7 +61,7 @@ public class CustomerAddress implements Serializable{
             return this;
         }
         
-        public Builder customerAddress(CustomerAddress customerAddress){
+        public Builder copy(CustomerAddress customerAddress){
             id= customerAddress.getId();
             streetAddress  = customerAddress.getStreetAddress();
             postalAddress= customerAddress.getPostalAddress();

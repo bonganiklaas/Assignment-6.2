@@ -6,11 +6,13 @@
 package com.mycompany.domain;
 
 import java.io.Serializable;
+import javax.persistence.Embeddable;
 
 /**
  *
  * @author BONGANI
  */
+@Embeddable
 public class CustomerName implements Serializable{
     
     private String firstName;

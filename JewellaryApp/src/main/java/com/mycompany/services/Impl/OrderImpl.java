@@ -26,9 +26,11 @@ public class OrderImpl implements OrderService{
     public List<OrderItem> getAllOrders() {
         List<OrderItem> orders= new ArrayList<>();
          Iterable<OrderItem> values = repository.findAll();
-          for (OrderItem value : values) {
-            OrderItem.add(value);
-        }
+          for (OrderItem value : values)
+          {
+             getAllOrders().add(value);
+            //.OrderItem.add(value);
+          }
         return orders;
     }
 

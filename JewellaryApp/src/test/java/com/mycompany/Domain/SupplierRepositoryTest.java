@@ -68,20 +68,4 @@ public class SupplierRepositoryTest {
         Assert.assertNull(deletedSupplier);
     }
 
-   @BeforeClass
-    public static void setUpClass() throws Exception {
-       
-    }
-
-    @AfterClass
-    public static void tearDownClass() throws Exception {
-    }
-
-    @BeforeMethod
-    public void setUpMethod() throws Exception {
-    }
-
-    @AfterMethod
-    public void tearDownMethod() throws Exception {
-    }
 }

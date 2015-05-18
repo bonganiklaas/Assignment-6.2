@@ -18,15 +18,19 @@ import java.util.Map;
 public class CreditCardFactory {
     
     //Create a Credit card with Name, balance, expiry date and credit Number 
-     public static CreditCard createCreditCard(Map<String, String> values, int creditNumber, double balance, Date expiryDate, List<Orders> order, List <CreditCard> creditCard) 
+     public static CreditCard createCreditCard(/*Map<String, String> values,*/ int creditNumber, double balance,String name/*, Date expiryDate ,List<Orders> order, List <CreditCard> creditCard*/) 
      {
          CreditCard creditcard = new CreditCard
                  .Builder(creditNumber)
                  .balance(balance)
-                 .copy(null)
+                 .owner(name)
                  .build();                 
          
          return creditcard;
      
       }
+
+    public static Object Builder(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

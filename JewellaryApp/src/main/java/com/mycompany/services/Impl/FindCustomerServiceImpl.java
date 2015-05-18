@@ -22,12 +22,9 @@ public class FindCustomerServiceImpl implements FindCustomerService {
     
     @Autowired
     CustomerRepository customerRepo;
-    
+
     @Override
     public Customer getCustomer(String id) {
-        
-        
-        
         Customer customer = new Customer();
         List<Customer> allcustomer = (List<Customer>) customerRepo.findAll();
                 
@@ -38,9 +35,14 @@ public class FindCustomerServiceImpl implements FindCustomerService {
            
         }
              return customer;  
-        
+       
     }
-    
 
-    
+    @Override
+    public List<Customer> getAllCustomers() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
+      
 }

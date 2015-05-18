@@ -5,7 +5,7 @@
  */
 package com.mycompany.domain;
 
-import com.mycompany.domain.Customer.Builder;
+
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
