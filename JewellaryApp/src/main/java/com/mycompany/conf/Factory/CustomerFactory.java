@@ -20,10 +20,10 @@ public class CustomerFactory {
      public static Customer createCustomer(Map<String, String> values, String names,String customerNumber,List<Orders> order, List <CreditCard> creditCard) 
      {
          Customer customer = new Customer
-                 .Builder(customerNumber)
+                 .Builder(values.get ("CustomerNumber"))
                  .creditCard(creditCard)
                  .order(order)
-                 .names(names)
+                 .names(values.get("Firstname"))
                  .build();
          return customer;
      
